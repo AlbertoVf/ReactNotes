@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Note from './Note/Note';
 
 class App extends Component {
 	constructor(){
@@ -24,7 +25,11 @@ class App extends Component {
 					{
 						this.state.notes.map(note=>{
 							return(
-								<li key={note.noteId}>{note.noteContent}</li>
+								<Note
+									noteContent={note.noteContent}
+									noteId={note.noteId}
+									key={note.noteId}
+								/>
 							)
 						})
 					}
