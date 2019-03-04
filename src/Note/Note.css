@@ -7,10 +7,9 @@
 }
 
 .delete {
-    padding: 5px;
-    float: right;
-    margin: -20px -5px 10px 10px;
-    font-size: 120%;
+    font-size: 100%;
+    text-align: right;
+    padding-right: 5px;
 }
 
 .content {

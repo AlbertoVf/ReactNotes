@@ -5,7 +5,7 @@ class Note extends Component {
 	constructor(props) {
 		super(props);
 		this.noteContent=props.noteContent;
-		this.noteId=props.noteId;
+		this.noteId=props.noteId+'';
 	}
 	handleRemove(id){
 		console.log(id);
@@ -14,8 +14,7 @@ class Note extends Component {
 	render(){
 		return(
 			<section className='Note'>
-				<span className='delete' onClick={()=>{this.handleRemove(this.noteId)}}>&times;</span>
-				<header>{this.noteId}</header>
+				<header className='delete' onClick={()=>{this.handleRemove(this.noteId)}}>&times;</header>
 				<div className='content'>{this.noteContent}</div>
 			</section>
 		)

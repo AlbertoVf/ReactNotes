@@ -46,11 +46,10 @@ body {
 .Note:hover {
   box-shadow: 0 0 10px #FFF;
 }
-.Note span.delete {
-  color: #F00;
-}
 .Note header {
   background-color: #176213;
+  color: #F00;
+  text-align: right;
 }
 .NoteForm input {
   background-color: #0ac400;

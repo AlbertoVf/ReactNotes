@@ -2,21 +2,36 @@ import React, { Component } from 'react';
 import './App.css';
 import Note from './Note/Note';
 import NoteForm from './NoteForm/NoteForm';
+import firebase from 'firebase';
+import {DB_CONFIG} from './config/config';
+import 'firebase/database';
 class App extends Component {
 	constructor(){
 		super();
 		this.state={
 			notes:[
-				{noteId:1,noteContent:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-				{noteId:2,noteContent:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-				{noteId:3,noteContent:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-				{noteId:4,noteContent:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
+
 			]
 		};
+		this.app=firebase.initializeApp(DB_CONFIG);
+		this.db=this.app.database().ref().child('notes');
+		this.addNote=this.addNote.bind(this);
 	}
-	removeNote(){
+	componentDidMount(){
+		const {notes} = this.state;
+		this.db.on('child_added',snap=>{
+			notes.push({
+				noteId:snap.key,
+				noteContent:snap.val().noteContent
+			})
+			this.setState({notes});
+		});
+	}
+	removeNote(){}
+	addNote(note){
+		this.db.push().set({noteContent:note});
+	}
 
-	}
 	render() {
 		return (
 			<article className='notesContainer'>
@@ -28,18 +43,14 @@ class App extends Component {
 					{
 						this.state.notes.map(note=>{
 							return(
-								<Note
-									noteContent={note.noteContent}
-									noteId={note.noteId}
-									key={note.noteId}
-								/>
+								<Note noteContent={note.noteContent} noteId={note.noteId} key={note.noteId} />
 							)
 						})
 					}
 					</ul>
 				</section>
 				<footer className='notesFooter'>
-				<NoteForm></NoteForm>
+					<NoteForm addNote={this.addNote}></NoteForm>
 				</footer>
 			</article>
 		);
