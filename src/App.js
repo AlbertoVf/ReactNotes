@@ -16,6 +16,7 @@ class App extends Component {
 		this.app=firebase.initializeApp(DB_CONFIG);
 		this.db=this.app.database().ref().child('notes');
 		this.addNote=this.addNote.bind(this);
+		this.removeNote=this.removeNote.bind(this);
 	}
 	componentDidMount(){
 		const {notes} = this.state;
@@ -26,8 +27,19 @@ class App extends Component {
 			})
 			this.setState({notes});
 		});
+		this.db.on('child_removed',snap=>{
+			for (var i = 0; i < notes.length; i++) {
+				if(notes[i].noteId===snap.key){
+					notes.splice(i,1);
+				}
+			}
+			this.setState({notes});
+		});
 	}
-	removeNote(){}
+	removeNote(noteId){
+
+		this.db.child(noteId).remove();
+	}
 	addNote(note){
 		this.db.push().set({noteContent:note});
 	}
@@ -43,7 +55,7 @@ class App extends Component {
 					{
 						this.state.notes.map(note=>{
 							return(
-								<Note noteContent={note.noteContent} noteId={note.noteId} key={note.noteId} />
+								<Note noteContent={note.noteContent} noteId={note.noteId} key={note.noteId} removeNote={this.removeNote} />
 							)
 						})
 					}

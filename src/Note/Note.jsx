@@ -9,7 +9,8 @@ class Note extends Component {
 	}
 	handleRemove(id){
 		console.log(id);
-		alert('remove',id);
+		 if (window.confirm('¿Estas seguro de eliminar esta nota?'))
+			this.props.removeNote(id);
 	}
 	render(){
 		return(
