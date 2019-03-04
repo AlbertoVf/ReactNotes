@@ -1,3 +1,7 @@
+/**
+ * Datos necesarios para establecer una conexion con la base de datos en FIrebase
+ * @type {Object}
+ */
 export const DB_CONFIG={
 	apiKey: "AIzaSyBIvgIFp8V8mOBE2VmxRFdtjKBSIjknQns",
 	authDomain: "notas-6de43.firebaseapp.com",
