@@ -4,42 +4,44 @@
 /node_modules
 /.pnp
 .pnp.js
+*~
+*.pyc
+static
+.grunt
 
 # testing
 /coverage
+test/the-files-to-test.generated.js
 
 # production
 /build
+build/
+coverage/
+.module-cache
 
 # misc
 .DS_Store
+.DS_STORE
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
+*.sublime-project
+*.sublime-workspace
+.idea
+*.iml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-
+*.log*
+chrome-user-data
 node_modules
 ncp-debug.log
 npm-debug.log
 bower_component
 src/config/configSec.js
-
-.DS_STORE
-node_modules
-*~
-*.pyc
-static
-.grunt
 _SpecRunner.html
 __benchmarks__
-build/
-coverage/
-.module-cache
 *.gem
 docs/.bundle
 docs/code
@@ -49,10 +51,3 @@ docs/js/*
 docs/downloads
 docs/vendor/bundle
 examples/shared/*.js
-test/the-files-to-test.generated.js
-*.log*
-chrome-user-data
-*.sublime-project
-*.sublime-workspace
-.idea
-*.iml

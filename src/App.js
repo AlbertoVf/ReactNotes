@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+	constructor(){
+		super();
+		this.state={
+			notes:[
+				{noteId:1,noteContent:'nota1'},
+				{noteId:2,noteContent:'nota2'},
+				{noteId:3,noteContent:'nota3'},
+				{noteId:4,noteContent:'nota4'}
+			]
+		};
+	}
+	render() {
+		return (
+			<article className='notesContainer'>
+				<header class='notesHeader'>
+					<h1>Bloc de notas</h1>
+				</header>
+				<section class='notesBody'>
+					<ul>
+					{
+						this.state.notes.map(note=>{
+							return(
+								<li key={note.noteId}>{note.noteContent}</li>
+							)
+						})
+					}
+					</ul>
+				</section>
+				<footer class='notesFooter'></footer>
+			</article>
+		);
+	}
 }
 
 export default App;
