@@ -1,17 +1,17 @@
 input, button {
-    padding: 0;
-    margin: 5px;
     border: none;
+    margin: 5px;
+    padding: 0;
 }
 
 input {
-    padding: 20px;
     font-family: 'Merienda', cursive;
     font-size: 2em;
+    padding: 20px;
 }
 
 button {
-    padding: 20px;
     font-family: 'Permanent Marker', cursive;
     font-size: 2em;
+    padding: 20px;
 }

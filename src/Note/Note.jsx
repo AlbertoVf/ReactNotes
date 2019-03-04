@@ -7,11 +7,14 @@ class Note extends Component {
 		this.noteContent=props.noteContent;
 		this.noteId=props.noteId+'';
 	}
+
 	handleRemove(id){
 		console.log(id);
-		 if (window.confirm('¿Estas seguro de eliminar esta nota?'))
+		if (window.confirm('¿Estas seguro de eliminar esta nota?')){
 			this.props.removeNote(id);
+		}
 	}
+
 	render(){
 		return(
 			<section className='Note'>

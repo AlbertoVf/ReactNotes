@@ -1,15 +1,22 @@
 import React, {Component} from 'react';
 import './NoteForm.css';
+
 class NoteForm extends Component {
 	constructor() {
 		super();
 		this.addNote=this.addNote.bind(this);
 	}
+
 	addNote(){
-		this.props.addNote(this.textInput.value);
+		if(this.textInput.value !==''){
+			this.props.addNote(this.textInput.value);
+		}else{
+			alert('La nota no puede estar vacia');
+		}
 		this.textInput.value='';
 		this.textInput.focus();
 	}
+
 	render(){
 		return(
 			<article className='NoteForm'>
