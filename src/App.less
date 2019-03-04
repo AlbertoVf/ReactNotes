@@ -1,0 +1,89 @@
+// out : App.css
+@fondo-pagina-claro: #005C97;
+@fondo-pagina-oscuro: #363795;
+@fondo-contenedores: rgb(0, 92, 150);
+@fondo-contenedores2: rgba(0, 92, 150, 0.75);
+@negro: #000;
+@blanco: #FFF;
+@rojo: #F00;
+@importante: rgb(23, 98, 19);
+@contenido: rgb(10, 196, 0);
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+body {
+	background: @fondo-pagina-claro;
+	background: linear-gradient(to right, @fondo-pagina-oscuro, @fondo-pagina-claro);
+	background: -webkit-linear-gradient(to right, @fondo-pagina-oscuro, @fondo-pagina-claro);
+	background: -moz-linear-gradient(to right, @fondo-pagina-oscuro, @fondo-pagina-claro);
+	background: -o-linear-gradient(to right, @fondo-pagina-oscuro, @fondo-pagina-claro);
+	color: @blanco;
+}
+
+.notesBody {
+	font-family: 'Merienda', cursive;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.notesFooter {
+	font-family: 'Merienda', cursive;
+	bottom: 0;
+	position: fixed;
+	left: 0;
+	width: 100%;
+}
+
+.notesBody,
+.notesFooter,
+.notesHeader {
+	background: @fondo-contenedores;
+	background: @fondo-contenedores2;
+	margin: 0;
+	padding: 20px;
+}
+
+.notesHeader {
+	text-shadow: 5px 5px @negro;
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+	font-size: 3em;
+}
+
+.Note {
+	background-color: @contenido;
+	color: @negro;
+
+	&:hover {
+		box-shadow: 0 0 10px @blanco;
+	}
+
+	span.delete {
+		color: @rojo;
+	}
+
+	header {
+		background-color: @importante;
+	}
+}
+
+.NoteForm {
+	input {
+		background-color: @contenido;
+	}
+
+	button {
+		background-color: @importante;
+
+		&:hover {
+			color: @blanco;
+		}
+	}
+}

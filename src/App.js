@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Note from './Note/Note';
-
+import NoteForm from './NoteForm/NoteForm';
 class App extends Component {
 	constructor(){
 		super();
@@ -38,7 +38,9 @@ class App extends Component {
 					}
 					</ul>
 				</section>
-				<footer className='notesFooter'></footer>
+				<footer className='notesFooter'>
+				<NoteForm></NoteForm>
+				</footer>
 			</article>
 		);
 	}
