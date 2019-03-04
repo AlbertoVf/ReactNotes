@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #005C97;
+    background: linear-gradient(to right, #363795, #005C97);
+    background: -webkit-linear-gradient(to right, #363795, #005C97);
+    background: -moz-linear-gradient(to right, #363795, #005C97);
+    background: -o-linear-gradient(to right, #363795, #005C97);
+    color: #FFF;
+}
+
+ul {
+    list-style: none;
+}
+
+.notesHeader, .notesBody, .notesFooter {
+    background: rgb(0, 92, 150);
+    background: rgba(0, 92, 150, 0.75);
+    margin: 0;
+    padding: 20px;
+}
+
+.notesHeader {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    font-size: 3em;
+    text-shadow: 5px 5px #000;
+}
+
+.notesBody {
+    font-family: 'Merienda', cursive;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.notesFooter {
+    font-family: 'Bad Script', cursive;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+}

@@ -7,11 +7,16 @@ class Note extends Component {
 		this.noteContent=props.noteContent;
 		this.noteId=props.noteId;
 	}
-
+	handleRemove(id){
+		console.log(id);
+		alert('remove',id);
+	}
 	render(){
 		return(
 			<section className='Note'>
-				<li>{this.noteId} - {this.noteContent}</li>
+				<span className='delete' onClick={()=>{this.handleRemove(this.noteId)}}>&times;</span>
+				<header>{this.noteId}</header>
+				<div className='content'>{this.noteContent}</div>
 			</section>
 		)
 	}

@@ -1,0 +1,30 @@
+.Note {
+    background-color: rgb(10, 196, 0);
+    color: #000;
+    margin: 10px;
+    display: inline-block;
+    min-width: 400px;
+    min-height: 150px;
+    font-size: 2em;
+}
+
+.Note:hover {
+    box-shadow: 0 0 10px #fff;
+}
+
+.Note span.delete {
+    padding: 5px;
+    color: #f00;
+    float: right;
+    margin: -20px -5px 10px 10px;
+    font-size: 120%;
+}
+
+.Note header {
+    background-color: rgb(23, 98, 19);
+}
+
+.Note div.content {
+    text-align: justify;
+    padding: 10px;
+}
