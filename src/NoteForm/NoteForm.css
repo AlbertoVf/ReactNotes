@@ -1,10 +1,10 @@
-input, button {
+textarea, button {
     border: none;
     margin: 5px;
     padding: 0;
 }
 
-input {
+textarea {
     font-family: 'Merienda', cursive;
     font-size: 2em;
     padding: 20px;

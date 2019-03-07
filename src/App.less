@@ -29,25 +29,21 @@ body {
 
 .notesBody {
 	font-family: 'Merienda', cursive;
-	margin-top: 20px;
+	margin-top: 175px;
 	text-align: center;
 }
 
-.notesFooter {
-	bottom: 0;
-	font-family: 'Merienda', cursive;
-	left: 0;
-	position: fixed;
-	width: 100%;
+.notesBody {
+	width: 70%;
 }
 
-.notesBody,
-.notesFooter,
-.notesHeader {
-	background: @fondo-contenedores;
-	background: @fondo-contenedores2;
-	margin: 0;
-	padding: 20px;
+.notesFooter {
+	float: right;
+	top: 175px;
+	font-family: 'Merienda', cursive;
+	left: 70%;
+	position: fixed;
+	width: 20%;
 }
 
 .notesHeader {
@@ -68,11 +64,12 @@ body {
 	header {
 		background-color: @importante;
 		color: @rojo;
+		cursor: pointer;
 	}
 }
 
 .NoteForm {
-	input {
+	textarea {
 		background-color: @contenido;
 	}
 

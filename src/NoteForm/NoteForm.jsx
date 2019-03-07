@@ -34,7 +34,7 @@ class NoteForm extends Component {
 	render(){
 		return(
 			<article className='NoteForm'>
-				<input type='text' placeholder='Introduce una nota' ref={input=>{this.textInput=input;}}/>
+				<textarea placeholder='Introduce una nota' ref={input=>{this.textInput=input;}}></textarea>
 				<button type='button' name='Add' onClick={this.addNote}>Añadir</button>
 			</article>
 		)

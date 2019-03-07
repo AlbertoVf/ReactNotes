@@ -1,9 +1,9 @@
 .Note {
     display: inline-block;
     font-size: 2em;
-    margin: 10px;
+    margin: 4px;
     min-height: 150px;
-    min-width: 400px;
+    min-width: 325px;
 }
 
 .delete {
