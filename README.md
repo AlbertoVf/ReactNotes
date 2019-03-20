@@ -1,4 +1,4 @@
-\#Notas
+# Notas
 Creacion de notas con React.js y Firebase.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
